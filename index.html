@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brigid House</title>
-<meta name="description" content="Follow the build of our new construction dream home.">
+<meta name="description" content="Building a house, and showing the whole thing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,38 +15,47 @@
 <div class="wrap">
 
   <header class="hero">
-    <p class="eyebrow">Building our dream home, one board at a time</p>
+    <p class="label">Building our dream home, one board at a time</p>
     <h1>Brigid House</h1>
-    <p class="tagline">A new construction diary — from foundation to front door.</p>
+    <p class="lede">Building a house, and showing the whole thing: foundation, framing and the decisions that only look obvious after you have made them.</p>
   </header>
 
   <section class="socials" aria-label="Follow along">
-    <a class="social-btn tiktok" href="https://www.tiktok.com/@brigidhouse" target="_blank" rel="noopener noreferrer">
+    <a class="btn btn-primary" href="https://www.tiktok.com/@brigidhouse" target="_blank" rel="noopener noreferrer">
       <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82c-.9-.87-1.45-2.08-1.45-3.41V2h-3.44v13.13c0 1.53-1.25 2.78-2.78 2.78a2.78 2.78 0 0 1 0-5.56c.28 0 .55.04.8.12V8.98a6.24 6.24 0 0 0-.8-.05A6.22 6.22 0 0 0 3.7 15.15a6.22 6.22 0 0 0 6.22 6.22 6.22 6.22 0 0 0 6.22-6.22V9.4a9.5 9.5 0 0 0 5.4 1.68V7.64c-1.7 0-3.1-.7-4.94-1.82Z"/></svg>
       <span>Follow on TikTok</span>
     </a>
   </section>
 
   <section class="contact" id="contact">
-    <h2>Say hello</h2>
-    <p>Questions about the build, the process, or just want to say hi? Send a note — it goes straight to my inbox.</p>
+    <div class="contact-card">
+      <p class="label">Get in touch</p>
+      <h2>Say hello</h2>
+      <p class="body-sm">Questions about the build, the process or anything else. Send a note and it goes straight to my inbox.</p>
 
-    <form action="https://formspree.io/f/xjykbnlo" method="POST" class="contact-form">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+      <form action="https://formspree.io/f/xjykbnlo" method="POST" class="contact-form">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
 
-      <button type="submit">Send Message</button>
-    </form>
+        <button type="submit" class="btn btn-primary">Send message</button>
+      </form>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; <span id="year"></span> Brigid House</p>
+    <p class="mono-sm">&copy; <span id="year"></span> Brigid House</p>
   </footer>
 
 </div>
