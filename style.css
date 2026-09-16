@@ -1,0 +1,169 @@
+:root {
+  --bg: #faf7f2;
+  --ink: #2b2622;
+  --ink-soft: #6b6258;
+  --accent: #a8492e;
+  --accent-ink: #ffffff;
+  --card: #ffffff;
+  --border: #e7e0d6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1a18;
+    --ink: #f2ede6;
+    --ink-soft: #b8afa3;
+    --accent: #d97a5a;
+    --accent-ink: #1c1a18;
+    --card: #26221f;
+    --border: #3a352f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 64px 24px 40px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.tagline {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ink);
+  color: var(--bg);
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.social-btn .icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.contact {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.contact h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  margin: 0 0 8px;
+}
+
+.contact > p {
+  color: var(--ink-soft);
+  margin: 0 0 24px;
+  font-size: 0.95rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--ink);
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.contact-form button {
+  margin-top: 20px;
+  align-self: flex-start;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.contact-form button:hover {
+  opacity: 0.85;
+}
+
+footer {
+  text-align: center;
+  margin-top: 48px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
