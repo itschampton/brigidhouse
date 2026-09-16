@@ -268,7 +268,7 @@ h1 {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-bottom: 80px;
 }
@@ -496,7 +496,8 @@ footer {
   .hero { margin-bottom: 52px; }
   .socials { margin-bottom: 52px; }
   .about { margin-bottom: 52px; }
-  .stats-grid { margin-bottom: 52px; }
+  .stats-grid { margin-bottom: 52px; gap: 16px; }
+  .stat-tile .stat-num { font-size: 22px; }
   .mediakit-section { margin-bottom: 52px; }
   h1 { font-size: 40px; }
   .about-grid { grid-template-columns: 96px 1fr; gap: 20px; }
