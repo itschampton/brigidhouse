@@ -4,20 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brigid House</title>
-<meta name="description" content="Building a house, and showing the whole thing.">
+<meta name="description" content="Building a house in 2026 like it's 1926.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<nav class="nav">
+  <a class="wordmark" href="index.html">Brigid House</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="work-with-me.html">Work with me</a>
+  </div>
+</nav>
+
 <div class="wrap">
 
+  <div class="cover">
+    <img class="cover-img" src="images/hero.jpg" alt="Watercolor illustration of the Brigid House new-construction home, a blue craftsman-style house with a wraparound porch">
+  </div>
+
   <header class="hero">
-    <p class="label">Building our dream home, one board at a time</p>
+    <p class="label">Building a house in 2026 like it's 1926</p>
     <h1>Brigid House</h1>
-    <p class="lede">Building a house, and showing the whole thing: foundation, framing and the decisions that only look obvious after you have made them.</p>
+    <p class="lede">Showing the whole thing: the move from DC to Raleigh, the framing decisions, and the choices that only look obvious after you've made them.</p>
   </header>
 
   <section class="socials" aria-label="Follow along">
@@ -27,34 +39,66 @@
     </a>
   </section>
 
-  <section class="contact" id="contact">
-    <div class="contact-card">
-      <p class="label">Get in touch</p>
-      <h2>Say hello</h2>
-      <p class="body-sm">Questions about the build, the process or anything else. Send a note and it goes straight to my inbox.</p>
-
-      <form action="https://formspree.io/f/xjykbnlo" method="POST" class="contact-form">
-        <div class="field">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
+  <section class="about" id="about">
+    <div class="about-grid">
+      <img class="portrait" src="images/portrait.jpg" alt="Portrait of Caitlyn, the creator of Brigid House">
+      <div>
+        <p class="label">About me</p>
+        <h2>Hi, I'm Brigid House.</h2>
+        <p class="body-sm">I'm a millennial mom in Raleigh, building a new construction home with my husband and our toddler son after years in DC. My rule for the build: 2026 construction that lives like it's 1926, craftsman at heart with a touch of Cape Cod. This is where I keep the receipts, the framing decisions, the budget surprises, the finish I changed my mind about twice.</p>
+        <div class="mini-stats">
+          <div>
+            <span class="stat-num">5.6K</span>
+            <span class="stat-label">Followers</span>
+          </div>
+          <div>
+            <span class="stat-num">96.3K</span>
+            <span class="stat-label">Views, 28 days</span>
+          </div>
+          <div>
+            <span class="stat-num">8.3K</span>
+            <span class="stat-label">Likes, 28 days</span>
+          </div>
         </div>
-
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Send message</button>
-      </form>
+        <a class="link-arrow" href="work-with-me.html">See the full media kit &rarr;</a>
+      </div>
     </div>
   </section>
 
+  <section class="contact" id="contact">
+    <p class="label">Get in touch</p>
+    <h2>Say hello</h2>
+    <p class="body-sm">Questions about the build, interested in working together, or just want to say hi. Send a note and it goes straight to my inbox.</p>
+
+    <form action="https://formspree.io/f/xjykbnlo" method="POST" class="contact-form">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send message</button>
+    </form>
+  </section>
+
   <footer>
+    <div class="social-row">
+      <a href="https://www.tiktok.com/@mydoughhouse" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82c-.9-.87-1.45-2.08-1.45-3.41V2h-3.44v13.13c0 1.53-1.25 2.78-2.78 2.78a2.78 2.78 0 0 1 0-5.56c.28 0 .55.04.8.12V8.98a6.24 6.24 0 0 0-.8-.05A6.22 6.22 0 0 0 3.7 15.15a6.22 6.22 0 0 0 6.22 6.22 6.22 6.22 0 0 0 6.22-6.22V9.4a9.5 9.5 0 0 0 5.4 1.68V7.64c-1.7 0-3.1-.7-4.94-1.82Z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com/mydoughhouse/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0a12 12 0 0 0-4.37 23.18c-.04-.95-.01-2.09.21-3.12.24-1.08 1.59-6.84 1.59-6.84s-.4-.81-.4-2.01c0-1.89 1.09-3.3 2.45-3.3 1.16 0 1.72.87 1.72 1.91 0 1.16-.74 2.91-1.12 4.52-.32 1.35.68 2.46 2.01 2.46 2.42 0 4.27-2.55 4.27-6.22 0-3.25-2.34-5.53-5.67-5.53-3.86 0-6.13 2.9-6.13 5.89 0 1.17.45 2.42 1.01 3.1a.4.4 0 0 1 .09.39c-.1.43-.33 1.35-.38 1.54-.06.25-.2.3-.45.18-1.69-.79-2.74-3.26-2.74-5.24 0-4.27 3.1-8.18 8.93-8.18 4.69 0 8.34 3.34 8.34 7.81 0 4.66-2.94 8.41-7.02 8.41-1.37 0-2.66-.71-3.1-1.55l-.84 3.21c-.31 1.17-1.13 2.64-1.68 3.54A12 12 0 1 0 12 0Z"/></svg>
+      </a>
+    </div>
     <p class="mono-sm">&copy; <span id="year"></span> Brigid House</p>
   </footer>
 
