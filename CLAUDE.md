@@ -47,7 +47,7 @@ Before making UI changes, read `project/README.md` and `project/tokens.json` fro
 
 ### Voice
 
-- Plain, specific, first person where it's the creator speaking — as the "Brigid House" persona itself (the About Me heading reads "Hi, I'm Brigid House.", leaning into the brand rather than the owner's personal name).
+- Plain, specific, first person where it's the creator speaking as herself (the About Me heading reads "Hi, I'm Caitlyn." — a "Hi, I'm Brigid House." brand-persona version was tried and reverted, so don't reintroduce it without asking).
 - Sentence case for headings/buttons; uppercase only via `label`/`tag` styles.
 - No emoji, no exclamation marks, no manufactured casualness, no em dashes (use comma, colon, or period).
 - Fine to state a trade-off plainly rather than smoothing it over.
@@ -70,8 +70,10 @@ Before making UI changes, read `project/README.md` and `project/tokens.json` fro
 
 ## Project structure
 
-- `index.html` (home: hero image, intro, TikTok link, About Me teaser, contact) and `work-with-me.html` (media kit: stats, audience demographics, top posts, contact) — same `style.css` and `script.js`, no build tooling.
-- `nav` (wordmark + Home / Work with me links) is duplicated at the top of both pages — there's no templating, so a nav change means editing both files.
+- `index.html` (home: hero image, intro, TikTok link, About Me teaser, contact) and `work-with-me/index.html` (media kit: stats, audience demographics, top posts, contact) — same `style.css` and `script.js`, no build tooling.
+- `work-with-me` is a folder (not a `.html` file) specifically so it serves at the clean URL `/work-with-me/` instead of `/work-with-me.html` — GitHub Pages treats any `index.html` as a folder's default document. Follow the same pattern for any future page.
+- All asset references (`style.css`, `script.js`, `images/...`) use root-absolute paths (`/style.css`, not `style.css`) on both pages. This is required, not just tidiness — `work-with-me/index.html` lives one directory deeper than `index.html`, so a relative path there would resolve to the wrong location.
+- `nav` (wordmark + Home / Work with me links) is duplicated at the top of both pages, also using root-absolute hrefs (`/`, `/work-with-me/`) rather than filenames — there's no templating, so a nav change means editing both files.
 - `images/hero.jpg` (banner illustration on the home page, cropped to the content column width via CSS) and `images/portrait.jpg` (About Me headshot, cropped to a circle with the `ring` border via CSS) — cropping happens in CSS, not the source files, so any source aspect ratio works.
 - `.gitignore` excludes `.claude/` (local preview server config, not part of the deployed site).
 - Contact form (identical on both pages) posts to Formspree (`https://formspree.io/f/xjykbnlo`), which forwards submissions to email — no backend of our own.
