@@ -30,7 +30,9 @@ Before making UI changes, read `project/README.md` and `project/tokens.json` fro
 
 ### Shape & layout
 
-- **Square corners everywhere** — `radius-none` (0). No rounded buttons, cards, or tags. **One deliberate exception:** the About Me portrait photo is circular with a two-stroke `ring` border (`box-shadow: 0 0 0 3px ring, 0 0 0 5px ground, 0 0 0 7px ring`), at the owner's explicit request. Don't extend rounding to anything else.
+- **Square corners, with two deliberate exceptions**, both at the owner's explicit request — don't extend rounding beyond these without asking:
+  - The About Me portrait photo is circular with a two-stroke `ring` border (`box-shadow: 0 0 0 3px ring, 0 0 0 5px ground, 0 0 0 7px ring`).
+  - Buttons (`.btn`) use a 2px `border-radius`, not `radius-none`. Everything else — cards, tags, form fields — stays square.
 - **Hairline borders, not shadows** — 1px `border-hairline` separates elements.
 - Content column max `68rem`, fluid gutter 20–56px.
 - Sections sit `space-7` (80px desktop / 52px mobile) apart; a section head sits `space-5` (28px) above its content.
@@ -66,7 +68,7 @@ Before making UI changes, read `project/README.md` and `project/tokens.json` fro
 - Buttons are solid `accent` fills (not outlined) — the owner specifically likes a solid blue button over an outlined one.
 - Stat numbers use `mono` with `tabular-nums`; stat tiles get a hairline top rule instead of a card border.
 - Percentage breakdowns (demographics) render as thin `accent`-filled bar tracks on a `border`-colored track, with the value in `mono-sm` at the end of the row — not pie charts.
-- `work-with-me.html` section order: key stats, then "Recent performance" (post list), then "Audience" (demographics), then contact. All posts render at the same visual weight in one `.post-list`, sorted by views descending (including outsized ones like the 2.2M-view post) — no separate "featured" callout box for a standout number, that read as confusing/oversized when tried.
+- `work-with-me/index.html` section order: key stats, then "Recent performance" (post list), then "Audience" (demographics), then contact. All posts render at the same visual weight in one `.post-list`, sorted by views descending (including outsized ones like the 2.2M-view post) — no separate "featured" callout box for a standout number, that read as confusing/oversized when tried.
 
 ## Project structure
 
@@ -77,4 +79,7 @@ Before making UI changes, read `project/README.md` and `project/tokens.json` fro
 - `images/hero.jpg` (banner illustration on the home page, cropped to the content column width via CSS) and `images/portrait.jpg` (About Me headshot, cropped to a circle with the `ring` border via CSS) — cropping happens in CSS, not the source files, so any source aspect ratio works.
 - `.gitignore` excludes `.claude/` (local preview server config, not part of the deployed site).
 - Contact form (identical on both pages) posts to Formspree (`https://formspree.io/f/xjykbnlo`), which forwards submissions to email — no backend of our own.
-- Media kit stats on `work-with-me.html` are pulled manually from TikTok analytics screenshots the owner provides, dated in the page header (`Updated <date>`) — there's no live data feed, so refreshing the numbers means editing the HTML directly and updating that date.
+- Media kit stats on `work-with-me/index.html` are pulled manually from TikTok analytics screenshots the owner provides, dated in the page header (`Updated <date>`) — there's no live data feed, so refreshing the numbers means editing the HTML directly and updating that date.
+- `favicon.svg` (root): a serif "B" in Chambray blue (`#7B9BB0`, fixed, not theme-swapped) on a transparent background, chosen to read on both light and dark browser chrome. Linked via `<link rel="icon" href="/favicon.svg" type="image/svg+xml">` on both pages — no PNG/ICO fallback exists, which is fine for current mainstream browsers but won't show in very old ones.
+- Both pages carry Open Graph + Twitter Card meta tags (`og:title`, `og:description`, `og:image`, `twitter:card`) so link previews in texts/social apps show `images/hero.jpg` as the thumbnail. `og:image` must stay an absolute URL (`https://brigidhouse.com/...`) — relative paths don't work for social scrapers. If a page-specific preview image is ever wanted instead of reusing the hero shot everywhere, update `og:image`/`twitter:image` per page.
+- Both content images have real, specific alt text (not filler) — keep it that way for any future image: describe what's actually in the photo/illustration.
