@@ -34,7 +34,7 @@ Before making UI changes, read `project/README.md` and `project/tokens.json` fro
   - The About Me portrait photo is circular with a two-stroke `ring` border (`box-shadow: 0 0 0 3px ring, 0 0 0 5px ground, 0 0 0 7px ring`).
   - Buttons (`.btn`) use a 2px `border-radius`, not `radius-none`. Everything else — cards, tags, form fields — stays square.
 - **Hairline borders, not shadows** — 1px `border-hairline` separates elements.
-- Content column max `68rem`, fluid gutter 20–56px.
+- Content column: `.wrap` is a fixed `max-width: 46rem` on **both** pages — they used to differ (38rem home / 46rem media kit), which the owner didn't like, so this is now a single shared value. Don't reintroduce a per-page width; individual text elements (`.lede`, `.body-sm`, etc.) already cap their own line length in `ch` units, so widening `.wrap` doesn't affect readability.
 - Sections sit `space-7` (80px desktop / 52px mobile) apart; a section head sits `space-5` (28px) above its content.
 - Cards: 1px `border` outline, colored chip on top, `ground` body below with its own top rule.
 
@@ -60,6 +60,13 @@ Before making UI changes, read `project/README.md` and `project/tokens.json` fro
 
 - Focus ring: 2px solid `accent`, offset 2px.
 - Respect the documented contrast pairings above rather than inventing new color-on-color combinations.
+- The `.reveal` fade-in (below) fully disables itself under `prefers-reduced-motion: reduce` — keep that guard if you touch it.
+
+### Fade-in on load / scroll
+
+- Add the `reveal` class to a top-level section to make it fade + slide up (`opacity`/`translateY`) the first time it scrolls into view. `script.js` uses an `IntersectionObserver` to add `.is-visible` once per element (unobserves after), so it fires immediately for anything already in the viewport on load (the hero) and on scroll for everything below the fold — one mechanism covers both cases the owner asked for.
+- Applied to: `.cover`, `.hero`, `.socials`, `.about`, `.contact` on the home page; `.hero`, `.stats-grid`, both `.mediakit-section`s, `.contact` on the media kit page. Not applied to `footer` or individual form fields — keep it to whole sections, not a staggered per-element effect.
+- Falls back to instantly visible (no animation) if `prefers-reduced-motion: reduce` is set, or if `IntersectionObserver` isn't available.
 
 ### Layout pattern ("Quiet Ledger")
 

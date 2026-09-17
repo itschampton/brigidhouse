@@ -47,13 +47,9 @@ img { max-width: 100%; }
   gap: 12px 24px;
   justify-content: space-between;
   align-items: center;
-  max-width: 38rem;
+  max-width: 46rem;
   margin: 0 auto;
   padding: 24px 20px;
-}
-
-.nav.nav-wide {
-  max-width: 46rem;
 }
 
 .nav .wordmark {
@@ -101,13 +97,9 @@ img { max-width: 100%; }
 /* ---- Shared layout ---- */
 
 .wrap {
-  max-width: 38rem;
+  max-width: 46rem;
   margin: 0 auto;
   padding: 56px 20px 52px;
-}
-
-.wrap-wide {
-  max-width: 46rem;
 }
 
 .hero {
@@ -488,6 +480,27 @@ footer {
   font-variant-numeric: tabular-nums;
   font-size: 12px;
   color: var(--text-muted);
+}
+
+/* ---- Fade-in on load / scroll ---- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 @media (max-width: 480px) {
