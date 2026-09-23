@@ -365,12 +365,12 @@ h1 {
 }
 
 .post-title a {
-  color: var(--accent);
+  color: inherit;
   text-decoration: underline;
 }
 
 .post-title a:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .post-views {
