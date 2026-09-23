@@ -279,14 +279,6 @@ h1 {
   color: var(--text);
 }
 
-.stat-tile .stat-delta {
-  display: block;
-  font-family: 'IBM Plex Mono', ui-monospace, monospace;
-  font-size: 12px;
-  color: var(--accent);
-  margin-top: 2px;
-}
-
 .stat-tile .stat-label {
   display: block;
   font-size: 12px;
@@ -370,6 +362,15 @@ h1 {
 .post-title {
   font-size: 14px;
   color: var(--text);
+}
+
+.post-title a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.post-title a:hover {
+  opacity: 0.8;
 }
 
 .post-views {
