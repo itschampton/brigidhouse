@@ -316,7 +316,7 @@ h1 {
 .bar-row:last-child { margin-bottom: 0; }
 
 .bar-name {
-  width: 84px;
+  width: 104px;
   flex-shrink: 0;
   font-size: 13px;
   color: var(--text-muted);
@@ -516,6 +516,6 @@ footer {
   h1 { font-size: 40px; }
   .about-grid { grid-template-columns: 96px 1fr; gap: 20px; }
   .about h2 { font-size: 24px; }
-  .bar-name { width: 64px; font-size: 12px; }
+  .bar-name { width: 88px; font-size: 12px; }
   .post-list li { flex-direction: column; gap: 4px; }
 }

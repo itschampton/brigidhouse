@@ -75,6 +75,7 @@ Before making UI changes, read `project/README.md` and `project/tokens.json` fro
 - Buttons are solid `accent` fills (not outlined) — the owner specifically likes a solid blue button over an outlined one.
 - Stat numbers use `mono` with `tabular-nums`; stat tiles get a hairline top rule instead of a card border.
 - Percentage breakdowns (demographics) render as thin `accent`-filled bar tracks on a `border`-colored track, with the value in `mono-sm` at the end of the row — not pie charts.
+- "Audience" section has three `.bars` groups: Gender (labels are "Female"/"Male"/"Other", matching TikTok's own terminology — not "Women"/"Men"), Age, and Locations (top 3 countries by %). A 0% row (e.g. "Other") is still shown, not hidden, for honesty/completeness. `.bar-name` is 104px (88px mobile) specifically to fit "United States" on one line — don't shrink it back down without checking longer location names still fit.
 - `work-with-me/index.html` section order: key stats, then "Recent performance" (post list), then "Audience" (demographics), then contact. All posts render at the same visual weight in one `.post-list`, sorted by views descending (including outsized ones like the 2.2M-view post) — no separate "featured" callout box for a standout number, that read as confusing/oversized when tried.
 
 ## Project structure
